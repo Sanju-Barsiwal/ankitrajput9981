@@ -1,31 +1,26 @@
+const express = require("express");
 const mongoose = require("mongoose");
-const costumer = new mongoose.Schema({
-    Name:{
-        type: String,
-        required: true
+const costumerSchema = new mongoose.Schema({
+    name:{
+        type: String
     },
     email:{
         type: String,
-        required:true,
-        unique:true
+        unique: false
     },
     Phone:{
         type: Number,
-        required:true,
-        unique:true
+        unique: false
     },
     Date:{
-        type: Date
+        type: String
     },
     Time:
     {
-        type:Time
-    },
-    Person: {
-        type: Number
+        type:String
     }
-})
+});
 // now we need to create collection
 
-const Order  = new mongoose.model("Order",costumer);
+const Order  = new mongoose.model("Order",costumerSchema);
 module.exports = Order;
