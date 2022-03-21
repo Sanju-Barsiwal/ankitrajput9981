@@ -8,8 +8,6 @@ require("./db/conn");
 const port  =process.env.PORT || 3000;
 
 
-
-
 // start
 const {MongoClient} = require('mongodb');
 const { Collection } = require("mongoose");
@@ -18,6 +16,8 @@ const databaseName = "yummydata"
 const client = new MongoClient(url);
 
 // end
+
+
 
 const static_path =path.join(__dirname,"../views");
 app.use((express.static(static_path )));
